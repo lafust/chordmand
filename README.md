@@ -6,10 +6,12 @@ Built for fun and to explore Python string manipulation (pun intended), data str
 
 ---
 
-WORK IN PROGRESS. Currently supports:
-- Single chord input for major and minor chords
-- Simple ASCII chart rendering
+🚧 WORK IN PROGRESS 🚧
 
+## Currently supports
+- Input of a single major or minor chord
+- Simple ASCII chart rendering
+- Example:
 
 ```
 Enter a chord: A
