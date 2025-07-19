@@ -4,26 +4,33 @@
 
 Built for fun and to explore Python string manipulation (pun intended), data structures, and CLI interaction.
 
----
+
 
 🚧 WORK IN PROGRESS 🚧
 
 ## Currently supports
 - Input of a single major or minor chord
 - Simple ASCII chart rendering
-- Example:
+
+💡 Try `python chordmand.py Gm` to test the current implementation, it will be displayed as:
 
 ```
-Enter a chord: A
-
-A
-x|||||
-x|ooo|
-x|||||
+Gm
+------
+EADGBe
+||||||
+||||||
+●||●●●
+||||||
+|●●|||
+||||||
+||||||
+||||||
 ```
+...or call the program without arguments to experience the interactive mode! ✨
 
 ## Planned Features
-- Multiple chord input
+- Multiple chord input and output
+- Support for more types of chords
 - Transposition
-- Interactive and non-interactive mode
-- (support for Ukulele, Piano...?)
+- (Support for Ukulele, Piano...?)
