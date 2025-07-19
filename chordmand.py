@@ -48,22 +48,38 @@ def print_fretboard(chord):
         if fret != '0':
             if fret == 'x':
                 for row in fretboard:
-                    row[string] = 'x'
+                    row[string] = '‡'
             else:
-                fretboard[int(fret)-1][string] = 'O'
+                fretboard[int(fret)-1][string] = '●'
     print(f"\n{chord}")
+    print("------")
+    print("EADGBe")
     # print("EADGBe")
     for fret in fretboard:
         print(''.join(map(str, fret)))
+    print("\n")
 
-def main(args):
+def interactive():
+    print("CHORDMAND interactive mode!")
     chord = input("Enter a chord: ")
     if 'b' in chord:
         flat = True
         chord = flat_to_sharp[chord]
     print_fretboard(chord)
+
+def main(argv):
+    if (len(argv) == 1) or ("--interactive" in argv):
+        interactive()
+    elif len(argv) > 2:
+        print("Please enter a single chord")
+    else:
+        chord = argv[1]
+        if 'b' in chord:
+            flat = True
+            chord = flat_to_sharp[chord]
+        print_fretboard(chord)
     return 0
 
 
 if __name__ == '__main__':
-    sys.exit(main(sys.argv[1:]))
+    main(sys.argv)
