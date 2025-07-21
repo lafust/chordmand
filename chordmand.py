@@ -59,6 +59,10 @@ def print_fretboard(chord):
         print(''.join(map(str, fret)))
     print("\n")
 
+def print_fretboards(chords):
+    for chord in chords:
+        print_fretboard(chord)
+
 def interactive():
     print("CHORDMAND interactive mode!")
     chord = input("Enter a chord: ")
@@ -70,14 +74,13 @@ def interactive():
 def main(argv):
     if (len(argv) == 1) or ("--interactive" in argv):
         interactive()
-    elif len(argv) > 2:
-        print("Please enter a single chord")
     else:
-        chord = argv[1]
-        if 'b' in chord:
-            flat = True
-            chord = flat_to_sharp[chord]
-        print_fretboard(chord)
+        chords = argv[1:]
+        for chord in chords:
+            if 'b' in chord:
+                flat = True
+                chord = flat_to_sharp[chord]
+        print_fretboards(chords)
     return 0
 
 
