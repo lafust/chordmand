@@ -9,28 +9,29 @@ Built for fun and to explore Python string manipulation (pun intended), data str
 🚧 WORK IN PROGRESS 🚧
 
 ## Currently supports
-- Input of a single major or minor chord
+- Input of one or more major or minor chords
 - Simple ASCII chart rendering
 
-💡 Try `python chordmand.py Gm` to test the current implementation, it will be displayed as:
+💡 Try `python main.py Em G D A` to test the current implementation, it will be displayed as:
 
 ```
-Gm
-------
-EADGBe
-||||||
-||||||
-●||●●●
-||||||
-|●●|||
-||||||
-||||||
-||||||
+  Em       G        D        A   
+------   ------   ------   ------
+EADGBe   EADGBe   EADGBe   EADGBe
+||||||   ||||||   ‡‡||||   ‡|||||
+|●●|||   |●||||   ‡‡|●|●   ‡|●●●|
+||||||   ●||||●   ‡‡||●|   ‡|||||
+||||||   ||||||   ‡‡||||   ‡|||||
+||||||   ||||||   ‡‡||||   ‡|||||
+||||||   ||||||   ‡‡||||   ‡|||||
+||||||   ||||||   ‡‡||||   ‡|||||
+||||||   ||||||   ‡‡||||   ‡|||||
+
 ```
 ...or call the program without arguments to experience the interactive mode! ✨
 
 ## Planned Features
-- Multiple chord input and output
 - Support for more types of chords
+- Improved ASCII rendering
 - Transposition
-- (Support for Ukulele, Piano...?)
+- (Support for Ukulele?)
