@@ -4,10 +4,6 @@
 
 Built for fun and to explore Python string manipulation (pun intended), data structures, and CLI interaction.
 
-
-
-🚧 WORK IN PROGRESS 🚧
-
 ## Currently supports
 - Input of one or more major or minor chords
 - Simple ASCII chart rendering
