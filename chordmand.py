@@ -41,7 +41,7 @@ chords = {
 }
 
 
-def print_fretboard(chord):
+def construct_fretboard(chord):
     fretboard = [['|' for _ in range(6)] for _ in range(8)]
     pattern = chords[chord]
     for string, fret in enumerate(pattern):
@@ -51,25 +51,31 @@ def print_fretboard(chord):
                     row[string] = '‡'
             else:
                 fretboard[int(fret)-1][string] = '●'
-    print(f"\n{chord}")
-    print("------")
-    print("EADGBe")
-    # print("EADGBe")
-    for fret in fretboard:
-        print(''.join(map(str, fret)))
-    print("\n")
+    lines = [''.join(row) for row in fretboard]
+    return lines
 
 def print_fretboards(chords):
-    for chord in chords:
-        print_fretboard(chord)
+    all_lines = [construct_fretboard(chord) for chord in chords]
+    name_line = '   '.join(chord.center(6) for chord in chords)
+    separator_line = '   '.join('------' for _ in chords)
+    string_line = '   '.join('EADGBe' for _ in chords)
+
+    print(name_line)
+    print(separator_line)
+    print(string_line)
+
+    for i in range(len(all_lines[0])):
+        print('   '.join(chord[i] for chord in all_lines))
 
 def interactive():
-    print("CHORDMAND interactive mode!")
-    chord = input("Enter a chord: ")
-    if 'b' in chord:
-        flat = True
-        chord = flat_to_sharp[chord]
-    print_fretboard(chord)
+    print("CHORDMAND interactive mode")
+    chords = input("Enter chords (separated by spaces): ")
+    chords = chords.split()
+    for chord in chords:
+        if 'b' in chord:
+            flat = True
+            chord = flat_to_sharp[chord]
+    print_fretboards(chords)
 
 def main(argv):
     if (len(argv) == 1) or ("--interactive" in argv):
